@@ -32,34 +32,52 @@ filterBox.addEventListener('change', function(event){
         
     
 })
-   
-
+  // function for createElement
+function createElement(elementName, property, value){
+const element = document.createElement(elementName);
+element[property] = value;
+return element;
+}
 //Functionalities
+
+//Creating list element 
+function createListElement(text){
+    const li = document.createElement('li');   
+// const span = document.createElement('span');
+// span.textContent = text;
+const span = createElement('span', 'textContent', text)
+li.appendChild(span);
+// const label = document.createElement('label');
+// label.textContent = 'Confirmed'
+const label = createElement('label', 'textContent', 'Confirmed')
+// const checkbox = document.createElement('input');
+// checkbox.type = 'checkbox';
+const checkbox = createElement('input', 'type', 'checkbox');
+// checkbox.addClass('check-box');
+label.appendChild(checkbox);
+li.appendChild(label);
+// const editBtn = document.createElement('button');
+// editBtn.innerText ='Edit';
+const editBtn = createElement('button', 'innerText', 'Edit');
+li.appendChild(editBtn);
+// const removeBtn = document.createElement('button');
+// removeBtn.innerText ='Remove';
+const removeBtn = createElement('button', 'innerText', 'Remove');
+li.appendChild(removeBtn);
+return li;
+}
 
  //Submitting the form and adding to ul
 form.addEventListener('submit',function(event){
     event.preventDefault();
     const userInput = formInput.value;
-const li = document.createElement('li');
-const span = document.createElement('span');
-span.textContent = userInput;
-li.appendChild(span);
-const label = document.createElement('label');
-label.textContent = 'Confirmed'
-const checkbox = document.createElement('input');
-checkbox.type = 'checkbox';
-label.appendChild(checkbox);
-li.appendChild(label);
-const editBtn = document.createElement('button');
-editBtn.innerText ='Edit';
-li.appendChild(editBtn);
-const removeBtn = document.createElement('button');
-removeBtn.innerText ='Remove';
-li.appendChild(removeBtn);
-ul.appendChild(li);
-input.value = '';
+    const li = createListElement(userInput)
+    ul.appendChild(li)
+formInput.value ='';
 
 })
+//
+//Grabin the checkbox state
 ul.addEventListener('change', function(event){
     const checkbox = event.target;
     const state = checkbox.checked;
@@ -68,6 +86,10 @@ ul.addEventListener('change', function(event){
         li.className = 'responded';
     }else li.className = '';
 })
+
+
+//Edit remove & save functionalities
+
 ul.addEventListener('click', function(event){
 if(event.target.tagName === 'BUTTON'){
     const button = event.target;
