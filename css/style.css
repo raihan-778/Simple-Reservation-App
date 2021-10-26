@@ -8,7 +8,7 @@
 body {
     font-family: 'Lato', sans-serif;
     color: #4c4c4c;
-    background: url(/img/cami-3725372_1920.jpg);
+    background: url(../img/cami-3725372_1920.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -129,7 +129,7 @@ li button:last-child {
     max-width: 900px;
     margin: 2.5em auto;
     border-radius: 0.35em;
-    background:url(/img/event1.jpg);
+    background:url(../img/event1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

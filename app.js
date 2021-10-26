@@ -69,12 +69,13 @@ return li;
 
  //Submitting the form and adding to ul
 form.addEventListener('submit',function(event){
-    event.preventDefault();
+    if(formInput.value !=''){event.preventDefault();
     const userInput = formInput.value;
     const li = createListElement(userInput)
     ul.appendChild(li)
+}else alert('Please Enter a Name')
 formInput.value ='';
-
+    
 })
 //
 //Grabin the checkbox state
