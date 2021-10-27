@@ -20,14 +20,14 @@ filterBox.addEventListener('change', function(event){
     const state = event.target.checked;
     const listElement = ul.children;
     if(state){
-        for(list of listElement){
-            if(list.className == 'responded'){
-                list.style.display = 'block'
-            }else list.style.display = 'none'
+        for(li of listElement){
+            if(li.className == 'responded'){
+                li.style.display = 'block'
+            }else li.style.display = 'none'
         }
     }else
-    for(list of listElement){
-        {list.style.display = 'block'}
+    for(li of listElement){
+        {li.style.display = 'block'}
     }
         
     
@@ -78,7 +78,7 @@ formInput.value ='';
     
 })
 //
-//Grabin the checkbox state
+//Grabing the checkbox state
 ul.addEventListener('change', function(event){
     const checkbox = event.target;
     const state = checkbox.checked;
